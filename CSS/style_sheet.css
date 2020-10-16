@@ -1,0 +1,52 @@
+.login-body {
+    background-color: #ffffff;
+}
+
+#head {
+    margin-left: 50px;
+}
+
+.container {
+    text-align: center;
+    width: 400px;
+    height: 450px;
+    margin-top: 200px;
+    margin-bottom: 300px;
+}
+
+#login {
+    border-style: solid;
+    border-color:#b8b8b8;
+}
+
+.btn {
+    margin-top: 30px;
+    width: 200px;
+    font-size:20px;
+}
+
+.btn#get_started {
+    margin-top:80px;
+}
+
+#enter_sign_in {
+    display: none;
+    width: 80%;
+    margin: 50px auto;
+}
+
+#enter_sign_in .btn {
+    width: 60%;
+}
+
+#register_page {
+    display: none;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#u_input {
+    margin-top: 50px;
+}
+
+

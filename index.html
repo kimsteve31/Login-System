@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panditter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/style_sheet.css">
+</head>
+
+<body class='login-body'>
+    <header>
+        <h1 id='head'><strong><a href="index.html">Panditter</a></strong></h1>
+    </header>
+    <main>
+        <section class='container' id='login'>
+            <div id="initial_screen"> 
+                <button type="button" class="btn btn-primary btn-lg" id='get_started'>Get Started</button>
+                <br>
+                <button type="button" class="btn btn-primary btn-lg" id="sign_in">Sign in</button>
+            </div>
+            <div id='enter_sign_in'>
+                <form id="input_sign_in">
+                    <div class="form-group" id='e_input'>
+                        <label for="input_sign_in">Email address</label>
+                        <input type="email" class="form-control" id="input_email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group" id='p_input'>
+                        <label for="input_sign_in">Password</label>
+                        <input type="password" class="form-control" id="input_password" placeholder="Enter Password">
+                    </div>
+                </form>
+                <div>
+                    <button type="button" class="btn btn-primary btn-lg" id='sign_button'>Sign In</button>
+                </div>
+            </div>
+            <div id='register_page'>
+                <form id="register">
+                    <div class="form-group" id='u_input'>
+                        <label for="register">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter Username">
+                    </div>
+                    <div class="form-group" id='re_input'>
+                        <label for="register">Email</label>
+                        <input type="email" class="form-control" id="register_email" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group" id='rp_input'>
+                        <label for="register">Password</label>
+                        <input type="password" class="form-control" id="register_password" placeholder="Enter Password">
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary btn-lg" id='register_button'>Register</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="client.js"></script>
+</body>
+
+</html>
