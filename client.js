@@ -8,6 +8,14 @@ class PandaUsers {
         this.users.push(panda);
     }
 
+    checkSignIn(email, password) {
+        if (this.isEmpty()) return false 
+        const match = this.users.find((panda) => {
+            return panda.email === email && panda.password === password;
+        });
+        return match != undefined;
+    }
+
     alreadyPanda(username, email) {
         if (this.isEmpty()) return false 
         const userArray = this.users.map(function(user) {
@@ -46,18 +54,31 @@ class Panda {
     }
 }
 
-// Function handler
+// Function handlers to add user to database and check user info
 function addUserToList(username, email, password) {
+    if (!isInfoEmpty(username, email, password)) return false 
+    if (!userDatabase.alreadyPanda(username, email)) {
+        userDatabase.addPanda(new Panda(username, email, password));
+        return true 
+    }
+    return false
+}
+
+function checkUserInfo(email, password) {
+    if (!isInfoEmpty('fill', email, password)) return false 
+    if (userDatabase.checkSignIn(email, password)) return true
+}
+
+function isInfoEmpty(username, email, password) {
     if (username.toString() == '') return false 
     if (email.toString() == '') return false 
     if (password.toString() == '') return false 
-    if (!userDatabase.alreadyPanda(username, email)) {
-        userDatabase.addPanda(new Panda(username, email, password));
-    }
+    return true
 }
 
 // Constant running main function 
 function main() {
+    // This html project utilizies JQuery instead of DOM 
     $(document).ready(function(){
         $("#get_started").click(function(){
             $("#initial_screen").css("display", "none");
@@ -68,7 +89,16 @@ function main() {
             $("#enter_sign_in").css("display", "block");
         });
         $('#register_button').click(function(){
-            addUserToList(document.querySelector('#username').value, document.querySelector('#register_email').value, document.querySelector('#register_password').value);
+            let execute = addUserToList(document.querySelector('#username').value, document.querySelector('#register_email').value, document.querySelector('#register_password').value);
+            if (execute) window.alert("Registered User!");
+            else window.alert("User not Registered!");
+            $("#enter_sign_in").css("display", "block");
+            $("#register_page").css("display", "none");
+        });
+        $('#sign_button').click(function() {
+            let execute = checkUserInfo(document.querySelector('#input_email').value, document.querySelector('#input_password').value);
+            if (execute) window.alert('Welcome Panda User!');
+            else window.alert("User not Recognized!");
         });
     });
 }
