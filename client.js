@@ -69,11 +69,9 @@ function checkUserInfo(email, password) {
     if (userDatabase.checkSignIn(email, password)) return true
 }
 
+// Check empty input
 function isInfoEmpty(username, email, password) {
-    if (username.toString() == '') return false 
-    if (email.toString() == '') return false 
-    if (password.toString() == '') return false 
-    return true
+    return (username.toString() != '' && email.toString() != '' && password.toString() != '');
 }
 
 // Constant running main function 

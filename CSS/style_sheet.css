@@ -29,6 +29,7 @@
     margin-top:80px;
 }
 
+/* Sign In Buttons */
 #enter_sign_in {
     display: none;
     width: 80%;
@@ -39,6 +40,7 @@
     width: 60%;
 }
 
+/* Register Page CSS*/
 #register_page {
     display: none;
     width: 80%;
